@@ -1,20 +1,70 @@
-/* CSS by ///ADD/// YOUR NAME */
+/* CSS by Menyeneabasi Obong */
 
 /* Imported Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 /* ///ADD/// CSS Reset */
 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 
 /* Root Variables */
 :root {
   --blue-bulletin: #1D3557;
+  --body-bg: #dde0d6;
   --news-flash: #E63946;
   --watchdog-white: #F1FAEE;
   --truth-text: #333;
   --story-subtitle: #457B9D;
-  --font-body: "Source Sans 3", sans-serif;
-  --font-heading: 'Merriweather', serif;
+  --font-heading: "Source Sans 3", sans-serif;
+  --font-body: 'Merriweather', serif;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   --transition: all 0.5s ease;
 }
@@ -39,21 +89,367 @@ body.dark-mode {
 }
 
 /* ///ADD/// Skip Link Styles */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
+  background: white;
+  padding: 1rem;
+}
 
 /* ///ADD/// Navigation Styles */
 
 /* ///ADD/// Global Layout Styles */
 
-/* ///ADD/// Global Text Styles */
+header {
+  background-color: var(--blue-bulletin);
+  font-family: var(--font-heading);
+  padding: 2rem 6rem;
+}
+
+main {
+  background-color: var(--body-bg);
+  margin: 0 auto;
+  padding:2rem 6rem;
+}
+
+
+  
+section {
+  margin-bottom: 3rem;
+}
+
+h1 { 
+  font-size: 3rem;
+  margin-bottom: .5rem;
+  color: var(--watchdog-white);
+  font-family: var(--font-body);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#introduction {
+  padding: 1rem;
+  margin: 1 auto;
+  letter-spacing: -0.25px;
+}
+
+#introduction h2 {
+  font-family: var(--font-body);
+  font-weight: 300;
+}
+
+#introduction p {
+  letter-spacing: 0.5px;
+  font-family: var(--font-heading);
+  color: var(--blue-bulletin);
+  font-size: 12px;
+  line-height: 1.25rem;
+}
+
+#introduction blockquote {
+  margin-bottom: 1rem;
+  color: var(--truth-text);
+  margin: 1rem 2rem auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+video{
+  display: block;
+}
+
+.menu {
+  display: flex;
+  gap: 0.75rem;
+  color: var(--watchdog-white);
+}
+
+.mobile-nav label {
+  display: none;
+}
+
+p.tagline{
+ font-family: var(--font-body);
+  margin-bottom: .5rem;
+  color: var(--watchdog-white);
+}
+
+ .menu li {
+  background-color: var(--news-flash);
+  height: min-content;
+  font-size: 11px;
+  border: var(--truth-text);
+  list-style: none;
+  
+}
+
+.menu li a {
+  display: block;
+  text-decoration: none;
+  padding: .5rem .75rem;
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--watchdog-white);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  
+  
+}
+
+#breaking-article-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+
+.breaking-article {
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--truth-text);
+}
+
+.breaking-article h3 {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--watchdog-white);
+}
+
+.breaking-article p {
+  margin-bottom: 15px;
+  line-height: 125%;
+}
+
+#featured-articles-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.featured-article {
+  border: var(--truth-text);
+}
+
+.featured-article {
+  background-color: var(--body-bg);
+  color: var(--truth-text);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--truth-text);
+}
+
+#featured-articles h2 {
+  font-size: 28px;
+}
+
+.featured-article h3 {
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
+  border-bottom: 2px solid var(--truth-text);
+}
+
+.featured-article p {
+  margin-bottom: 15px;
+  line-height: 125%;
+  font-size: 14px;
+}
+
+#name-email-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  gap: 0.5rem;
+}
+
+.name-email {
+  margin: 0;
+}
+
+.name-email label, .name-email input {
+  display: block;
+}
+
+.name-email input {
+  width: 97%;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+
+form {
+  background-color: var(--news-flash);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  color: var(--watchdog-white);
+  font-family: var(--font-heading);
+  border: 1px solid var(--blue-bulletin);
+
+}
+
+fieldset {
+  border: 2px solid var(--blue-bulletin);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+legend, button {
+  text-transform: uppercase;
+}
+
+fieldset label {
+  display: inline-block;
+  width: 33%;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+#subscribe {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+#subscribe h2 {
+  font-size: 2rem;
+}
+
+#subscribe p {
+  margin-bottom: 1rem;
+}
+
+#subscribe button {
+  background-color: var(--blue-bulletin);
+  border: none;
+  padding: 1rem;
+  color: var(--watchdog-white);
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bolder;
+  box-shadow: var(--shadow);
+  line-height: 0.1rem;
+  border: 4px solid var(--truth-text);
+}
+
+footer {
+  padding: 2rem;
+  color: var(--watchdog-white);
+  background-color: var(--blue-bulletin);
+}
+
+footer h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.socials {
+  display: flex;
+  gap: 0.75rem;
+  color: var(--watchdog-white);
+}
+
+.socials li {
+  list-style: none;
+  background-color: var(--news-flash);
+}
+
+#twitter {
+  padding-right: 1rem;
+}
+
+.socials li a {
+  display: inline-block;
+  text-decoration: none;
+  padding: .75rem 1rem;
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--watchdog-white);
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+small {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  padding-top: 3rem;
+}
+
 
 
 /* ///ADD/// medium styles 620px */
+@media screen and (min-width: 620px) {
+  .menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
+  #breaking-article-container {
+    grid-template-columns: 1fr;
+  }
+
+  #featured-articles-container {
+    grid-template-columns: 1fr;
+  }
+
+  #name-email-container {
+    grid-template-columns: 1fr;
+  }
+  
+}
 
 /* ///ADD/// large styles 920px */
+@media screen and (min-width: 920px) {
+  .menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #breaking-article-container {
+    grid-template-columns: 1fr;
+  }
 
+  #featured-articles-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #name-email-container {
+    grid-template-columns: 1fr 1fr;
+}
 
 /* ///ADD/// x-large styles 1024px */
+
+@media screen and (min-width: 1024px) {
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #breaking-article-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #featured-articles-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
@@ -61,5 +457,8 @@ body.dark-mode {
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
-
+   nav:has(#menu-toggle:checked) .menu {
+    display: flex;
+    flex-direction: column;
+  }
 }
