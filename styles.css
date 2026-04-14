@@ -142,7 +142,7 @@ h3 {
 
 #introduction {
   padding: 1rem;
-  margin: 1 auto;
+  margin: 1rem auto;
   letter-spacing: -0.25px;
 }
 
@@ -170,10 +170,13 @@ h3 {
 
 video{
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 .menu {
   display: flex;
+  
   gap: 0.75rem;
   color: var(--watchdog-white);
 }
@@ -198,7 +201,7 @@ p.tagline{
 }
 
 .menu li a {
-  display: block;
+  display: inline-block;
   text-decoration: none;
   padding: .5rem .75rem;
   font-weight: bold;
@@ -396,7 +399,7 @@ small {
 
 
 /* ///ADD/// medium styles 620px */
-@media screen and (min-width: 620px) {
+@media screen and (max-width: 620px) {
   .menu {
     flex-direction: column;
     gap: 0.5rem;
@@ -413,13 +416,17 @@ small {
   #name-email-container {
     grid-template-columns: 1fr;
   }
+
+  fieldset label {
+  display: inline-block;
+  width: 100%;
+}
   
 }
 
 /* ///ADD/// large styles 920px */
 @media screen and (min-width: 920px) {
   .menu {
-    flex-direction: column;
     gap: 0.5rem;
   }
   #breaking-article-container {
@@ -433,13 +440,17 @@ small {
   #name-email-container {
     grid-template-columns: 1fr 1fr;
 }
+fieldset label {
+  display: inline-block;
+  width: 49%;
+}
+}
 
 /* ///ADD/// x-large styles 1024px */
 
 @media screen and (min-width: 1024px) {
   .menu {
     display: flex;
-    flex-direction: column;
     gap: 0.5rem;
   }
   #breaking-article-container {
@@ -454,11 +465,31 @@ small {
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
 
+  body.dark-mode main {
+    background-color: var(--blue-bulletin);
+    color: var(--watchdog-white);
+  }
+
+  body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode #introduction blockquote, 
+  body.dark-mode #introduction p, body.dark-mode .featured-article p{
+    color: var(--watchdog-white);
+  }
+  body.dark-mode .featured-article {
+    background-color: var(--news-flash);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+  .animation {
+    animation: none;
+    transition: none;
+  }
+}
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
-@supports (selector(:has(*))) {
-   nav:has(#menu-toggle:checked) .menu {
-    display: flex;
-    flex-direction: column;
+@supports(selector(:has(*))) {
+  .mobile-nav:has(#menu-toggle:checked) .menu{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
